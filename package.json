@@ -30,7 +30,7 @@
     "@nestjs/terminus": "^8.0.8",
     "axios": "^0.27.2",
     "bottleneck": "^2.19.5",
-    "bull": "^4.8.4",
+    "bull": "^3.29.3",
     "dotenv": "^16.0.1",
     "joi": "^17.6.0",
     "reflect-metadata": "^0.1.13",
