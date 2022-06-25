@@ -9,7 +9,7 @@ import { HttpModule } from '@nestjs/axios';
 @Module({
   imports: [
     BullModule.registerQueue({
-      name: 'get-listing',
+      name: 'listings',
     }),
     ConfigModule,
     HttpModule,

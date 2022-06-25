@@ -26,14 +26,14 @@ interface JobResult {
   exists: boolean;
 }
 
-@Processor('get-listing')
+@Processor('listings')
 export class ListingConsumer implements OnModuleDestroy {
   private readonly logger = new Logger(ListingConsumer.name);
 
   constructor(
     private readonly listingService: ListingService,
     private readonly limiterService: LimiterService,
-    @InjectQueue('get-listing')
+    @InjectQueue('listings')
     private readonly queue: Queue,
   ) {}
 

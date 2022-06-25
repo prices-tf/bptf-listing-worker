@@ -10,7 +10,7 @@ import { LimiterHealthIndicator } from './limiter.health';
   imports: [
     TerminusModule,
     BullModule.registerQueue({
-      name: 'get-listing',
+      name: 'listings',
     }),
     LimiterModule,
   ],
