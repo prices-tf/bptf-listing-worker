@@ -5,23 +5,26 @@ import { Queue } from 'bull';
 import { getQueueToken } from '@nestjs/bull';
 
 describe('AppController (e2e)', () => {
-  let moduleRef: TestingModule;
   let app: INestApplication;
   let queue: Queue;
 
   beforeEach(async () => {
-    moduleRef = await Test.createTestingModule({
+    const moduleFixture: TestingModule = await Test.createTestingModule({
       imports: [AppModule],
     }).compile();
 
-    app = moduleRef.createNestApplication();
+    app = moduleFixture.createNestApplication();
     await app.init();
 
-    queue = app.get<Queue>(getQueueToken('get-listing'));
+    queue = app.get<Queue>(getQueueToken('listings'));
   });
 
   afterEach(() => {
-    return moduleRef.close();
+    return app.close();
+  });
+
+  it('should be defined', () => {
+    return expect(app).toBeDefined();
   });
 
   it('should start properly', async () => {
